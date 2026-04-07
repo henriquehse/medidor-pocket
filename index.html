@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Bolso: Vendedor Técnico</title>
+    <meta name="description" content="Guia técnico de bolso para vendedores de móveis planejados. Símbolos, mapeamento de pontos e checklist de viabilidade.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="top">
+        <div class="header-inner">
+            <div class="header-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <div>
+                <h1 class="header-title">Guia Técnico</h1>
+                <p class="header-subtitle">Móveis Planejados · Medidor Pocket v1.0</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <!-- Hero Card -->
+        <section class="hero-card animate-in">
+            <div class="hero-badge">📐 Referência Rápida</div>
+            <h2 class="hero-title">Vendedor Técnico</h2>
+            <p class="hero-desc">Tudo que você precisa na palma da mão para realizar medições precisas e profissionais.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value">6</span>
+                    <span class="hero-stat-label">Símbolos</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">2</span>
+                    <span class="hero-stat-label">Eixos</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value">4</span>
+                    <span class="hero-stat-label">Checks</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 1: Glossário de Símbolos -->
+        <section id="glossario" class="section animate-in">
+            <div class="section-header">
+                <span class="section-pill blue">Referência</span>
+                <h2 class="section-title">Dicionário de Símbolos</h2>
+            </div>
+            <div class="symbols-grid">
+                <div class="symbol-card" style="--delay: 0.05s">
+                    <div class="symbol-icon blue">PD</div>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Pé Direito</span>
+                        <span class="symbol-desc">Altura do piso ao teto (laje/gesso).</span>
+                    </div>
+                </div>
+                <div class="symbol-card" style="--delay: 0.1s">
+                    <div class="symbol-icon blue">P</div>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Peitoril</span>
+                        <span class="symbol-desc">Altura do piso até o início da janela.</span>
+                    </div>
+                </div>
+                <div class="symbol-card" style="--delay: 0.15s">
+                    <div class="symbol-icon red">S</div>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Sifão / Esgoto</span>
+                        <span class="symbol-desc">Ponto de saída de água (centro do cano).</span>
+                    </div>
+                </div>
+                <div class="symbol-card" style="--delay: 0.2s">
+                    <div class="symbol-icon orange">G</div>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Gás</span>
+                        <span class="symbol-desc">Ponto de alimentação para cooktop/fogão.</span>
+                    </div>
+                </div>
+                <div class="symbol-card" style="--delay: 0.25s">
+                    <div class="symbol-icon slate">ROD</div>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Rodapé</span>
+                        <span class="symbol-desc">Indicar altura × profundidade (ex: 10×1.5).</span>
+                    </div>
+                </div>
+                <div class="symbol-card" style="--delay: 0.3s">
+                    <div class="symbol-icon slate">MOLD</div>
+                    <div class="symbol-info">
+                        <span class="symbol-name">Moldura</span>
+                        <span class="symbol-desc">Acabamento de gesso no teto.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: O Ponto Exato -->
+        <section id="mapeamento" class="section animate-in">
+            <div class="section-header">
+                <span class="section-pill green">Técnica</span>
+                <h2 class="section-title">O Ponto Exato</h2>
+            </div>
+            <div class="tip-banner">
+                <span class="tip-icon">💡</span>
+                <p>Nunca anote um ponto solto no desenho. <strong>Use coordenadas!</strong></p>
+            </div>
+
+            <div class="axis-cards">
+                <div class="axis-card blue-axis">
+                    <div class="axis-badge">Eixo X</div>
+                    <h3 class="axis-title">Distância Lateral</h3>
+                    <p class="axis-desc">Sempre meça de um <strong>Canto de Referência</strong> (Esquerda ou Direita) até o centro do ponto.</p>
+                </div>
+                <div class="axis-card green-axis">
+                    <div class="axis-badge">Eixo Y</div>
+                    <h3 class="axis-title">Altura (H)</h3>
+                    <p class="axis-desc">Meça do <strong>Piso Acabado</strong> até o centro do ponto.</p>
+                </div>
+            </div>
+
+            <!-- Diagrama SVG Interativo -->
+            <div class="diagram-container">
+                <svg width="100%" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Parede -->
+                    <rect x="20" y="15" width="260" height="170" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+                    <text x="150" y="32" fill="#94a3b8" font-size="11" text-anchor="middle" font-weight="500">PAREDE</text>
+                    
+                    <!-- Grid de fundo -->
+                    <line x1="20" y1="55" x2="280" y2="55" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4"/>
+                    <line x1="20" y1="95" x2="280" y2="95" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4"/>
+                    <line x1="20" y1="135" x2="280" y2="135" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4"/>
+                    
+                    <!-- Ponto -->
+                    <circle cx="170" cy="100" r="10" fill="#3b82f6" opacity="0.15"/>
+                    <circle cx="170" cy="100" r="5" fill="#3b82f6">
+                        <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <text x="170" y="90" fill="#1e40af" font-size="9" text-anchor="middle" font-weight="700">PONTO</text>
+                    
+                    <!-- Cota X -->
+                    <line x1="20" y1="175" x2="170" y2="175" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6 3"/>
+                    <line x1="20" y1="170" x2="20" y2="180" stroke="#3b82f6" stroke-width="2"/>
+                    <line x1="170" y1="170" x2="170" y2="180" stroke="#3b82f6" stroke-width="2"/>
+                    <rect x="70" y="167" width="50" height="16" rx="3" fill="#3b82f6"/>
+                    <text x="95" y="179" fill="white" font-size="10" text-anchor="middle" font-weight="700">X (L)</text>
+                    
+                    <!-- Cota Y -->
+                    <line x1="275" y1="185" x2="275" y2="100" stroke="#10b981" stroke-width="2" stroke-dasharray="6 3"/>
+                    <line x1="270" y1="185" x2="280" y2="185" stroke="#10b981" stroke-width="2"/>
+                    <line x1="270" y1="100" x2="280" y2="100" stroke="#10b981" stroke-width="2"/>
+                    <rect x="267" y="133" width="16" height="22" rx="3" fill="#10b981"/>
+                    <text x="275" y="148" fill="white" font-size="10" text-anchor="middle" font-weight="700" transform="rotate(-90 275 148)">Y (H)</text>
+                    
+                    <!-- Label Piso -->
+                    <text x="150" y="195" fill="#94a3b8" font-size="9" text-anchor="middle">━━━ PISO ACABADO ━━━</text>
+                </svg>
+            </div>
+            <p class="diagram-caption">Exemplo: Tomada a <strong>120cm</strong> do canto (X) e <strong>110cm</strong> de altura (Y).</p>
+        </section>
+
+        <!-- Seção 3: Checklist de Viabilidade -->
+        <section id="viabilidade" class="section animate-in">
+            <div class="section-header">
+                <span class="section-pill amber">Checklist</span>
+                <h2 class="section-title">Verificação Técnica</h2>
+            </div>
+            <div class="checklist">
+                <label class="check-item" id="check-1">
+                    <div class="check-box">
+                        <input type="checkbox" onchange="toggleCheck(this)">
+                        <span class="checkmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                    </div>
+                    <div class="check-content">
+                        <span class="check-title">Fora de Esquadro?</span>
+                        <span class="check-desc">Verificar se os cantos das paredes estão em 90°.</span>
+                    </div>
+                    <span class="check-priority high">Alta</span>
+                </label>
+                <label class="check-item" id="check-2">
+                    <div class="check-box">
+                        <input type="checkbox" onchange="toggleCheck(this)">
+                        <span class="checkmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                    </div>
+                    <div class="check-content">
+                        <span class="check-title">Prumada de Cano?</span>
+                        <span class="check-desc">Há canos passando por fora da parede ou em colunas?</span>
+                    </div>
+                    <span class="check-priority medium">Média</span>
+                </label>
+                <label class="check-item" id="check-3">
+                    <div class="check-box">
+                        <input type="checkbox" onchange="toggleCheck(this)">
+                        <span class="checkmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                    </div>
+                    <div class="check-content">
+                        <span class="check-title">Medidas dos Eletros</span>
+                        <span class="check-desc">Geladeira, Fogão e Microondas estão medidos? (L×A×P)</span>
+                    </div>
+                    <span class="check-priority high">Alta</span>
+                </label>
+                <label class="check-item" id="check-4">
+                    <div class="check-box">
+                        <input type="checkbox" onchange="toggleCheck(this)">
+                        <span class="checkmark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        </span>
+                    </div>
+                    <div class="check-content">
+                        <span class="check-title">Pontos de Fixação</span>
+                        <span class="check-desc">A parede é de Drywall ou Alvenaria?</span>
+                    </div>
+                    <span class="check-priority medium">Média</span>
+                </label>
+            </div>
+            <div class="progress-bar-container">
+                <div class="progress-label">
+                    <span>Progresso</span>
+                    <span id="progress-text">0 de 4</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 4: Notas Rápidas -->
+        <section id="notas" class="section animate-in">
+            <div class="section-header">
+                <span class="section-pill dark">Anotações</span>
+                <h2 class="section-title">Notas Rápidas</h2>
+            </div>
+            <div class="notes-container">
+                <textarea id="notes-input" placeholder="Anote algo importante da obra aqui..." oninput="saveNotes()"></textarea>
+                <div class="notes-footer">
+                    <span class="notes-hint">💾 Salvo automaticamente</span>
+                    <button class="notes-clear" onclick="clearNotes()">Limpar</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Navegação -->
+    <footer class="bottom-nav">
+        <button class="nav-btn active" onclick="navigateTo('top', this)" id="nav-home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span>Home</span>
+        </button>
+        <button class="nav-btn" onclick="navigateTo('glossario', this)" id="nav-simbolos">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
+            <span>Símbolos</span>
+        </button>
+        <button class="nav-btn" onclick="navigateTo('mapeamento', this)" id="nav-mapa">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span>Mapa</span>
+        </button>
+        <button class="nav-btn" onclick="navigateTo('viabilidade', this)" id="nav-check">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span>Check</span>
+        </button>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
