@@ -2,437 +2,313 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Medidor Pocket · Finalização Técnica</title>
-    <meta name="description" content="Ferramenta de medição técnica de bolso para finalização de móveis planejados. Controle de projetos, ambientes e pontos hidráulicos/elétricos.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidor Pocket — Finalização Técnica</title>
+    <meta name="description" content="Ferramenta de campo para finalização técnica de móveis planejados.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ═══ SPLASH / LOADING ═══ -->
+    <!-- ═══ SPLASH ═══ -->
     <div class="splash" id="splash">
-        <div class="splash-content">
-            <div class="splash-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                    <line x1="12" y1="22.08" x2="12" y2="12"/>
-                </svg>
-            </div>
-            <h1 class="splash-title">MEDIDOR POCKET</h1>
-            <p class="splash-sub">Finalização Técnica</p>
-            <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+        <div class="splash-inner">
+            <div class="logo-bars"><div class="lb"></div><div class="lb s"></div><div class="lb"></div></div>
+            <h1 class="splash-t">MEDIDOR POCKET</h1>
+            <p class="splash-s">Finalização Técnica v3.0</p>
+            <div class="loader-track"><div class="loader-fill"></div></div>
         </div>
     </div>
 
-    <!-- ═══ APP SHELL ═══ -->
-    <div class="app" id="app">
-
-        <!-- HEADER -->
-        <header class="header">
-            <div class="header-left">
-                <div class="header-logo">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                        <line x1="12" y1="22.08" x2="12" y2="12"/>
-                    </svg>
+    <!-- ═══ APP LAYOUT ═══ -->
+    <div class="app-layout" id="app">
+        <!-- ── SIDEBAR (desktop/tablet) ── -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sb-header">
+                <div class="sb-brand">
+                    <div class="logo-bars sm"><div class="lb"></div><div class="lb s"></div><div class="lb"></div></div>
+                    <div class="sb-brand-text">
+                        <span class="sb-name">Medidor Pocket</span>
+                        <span class="sb-ver">v3.0</span>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="header-title">Medidor Pocket</h1>
-                </div>
+                <button class="sb-close" id="sb-close" aria-label="Fechar menu"><i data-lucide="x"></i></button>
             </div>
-            <div class="header-right">
-                <button class="header-btn" onclick="openNewProject()" title="Novo Projeto" id="btn-new-project">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+
+            <button class="sb-new-btn" onclick="openNewProject()">
+                <i data-lucide="plus"></i> Novo Projeto
+            </button>
+
+            <nav class="sb-nav">
+                <button class="sb-item active" id="snav-dash" onclick="navTo('dashboard',this)">
+                    <i data-lucide="layout-dashboard"></i><span>Dashboard</span>
+                    <span class="sb-badge" id="sb-badge-total">0</span>
                 </button>
-            </div>
-        </header>
-
-        <!-- ═══ VIEW: HOME (Dashboard) ═══ -->
-        <div class="view active" id="view-home">
-            <!-- Stats Row -->
-            <div class="stats-row">
-                <div class="stat-card accent">
-                    <span class="stat-value" id="stat-total">0</span>
-                    <span class="stat-label">Projetos</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value" id="stat-pending">0</span>
-                    <span class="stat-label">Pendentes</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-value" id="stat-done">0</span>
-                    <span class="stat-label">Concluídos</span>
-                </div>
-            </div>
-
-            <!-- Filter -->
-            <div class="filter-bar">
-                <button class="filter-chip active" data-filter="all" onclick="filterProjects('all', this)">Todos</button>
-                <button class="filter-chip" data-filter="pending" onclick="filterProjects('pending', this)">Pendentes</button>
-                <button class="filter-chip" data-filter="done" onclick="filterProjects('done', this)">Concluídos</button>
-            </div>
-
-            <!-- Project List -->
-            <div class="project-list" id="project-list">
-                <!-- Populated by JS -->
-            </div>
-
-            <!-- Empty State -->
-            <div class="empty-state" id="empty-state" style="display:none;">
-                <div class="empty-icon">📐</div>
-                <h3>Nenhum projeto cadastrado</h3>
-                <p>Toque no <strong>+</strong> para iniciar seu primeiro levantamento técnico.</p>
-            </div>
-        </div>
-
-        <!-- ═══ VIEW: NEW / EDIT PROJECT ═══ -->
-        <div class="view" id="view-new">
-            <div class="view-header">
-                <button class="back-btn" onclick="showView('home')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                <button class="sb-item" id="snav-ref" onclick="navTo('ref',this)">
+                    <i data-lucide="book-open"></i><span>Referência Técnica</span>
                 </button>
-                <h2 class="view-title" id="form-title">Novo Projeto</h2>
-                <button class="save-btn" onclick="saveProject()" id="btn-save">Salvar</button>
-            </div>
+            </nav>
 
-            <div class="form-scroll">
-                <!-- Client Info -->
-                <div class="form-section">
-                    <div class="form-section-header">
-                        <span class="form-section-icon">👤</span>
-                        <h3>Dados do Cliente</h3>
-                    </div>
-                    <div class="form-group">
-                        <label>Nome do Cliente</label>
-                        <input type="text" id="f-client" placeholder="Ex: Maria da Silva" autocomplete="off">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Contrato / Pedido</label>
-                            <input type="text" id="f-contract" placeholder="Ex: 21914-00127" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label>Loja</label>
-                            <input type="text" id="f-store" placeholder="Ex: Penha" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Vendedor</label>
-                            <input type="text" id="f-seller" placeholder="Nome do vendedor" autocomplete="off">
-                        </div>
-                        <div class="form-group">
-                            <label>Finalizador</label>
-                            <input type="text" id="f-finalizer" placeholder="Seu nome" value="HENRIQUE SANTOS" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Endereço</label>
-                        <input type="text" id="f-address" placeholder="Rua, número, apto..." autocomplete="off">
-                    </div>
+            <div class="sb-stats">
+                <p class="sb-stats-title">Resumo</p>
+                <div class="sb-stat-row">
+                    <span class="sb-stat-dot pending"></span>
+                    <span>Pendentes</span>
+                    <span class="sb-stat-val" id="sb-pending">0</span>
                 </div>
-
-                <!-- Ambientes -->
-                <div class="form-section">
-                    <div class="form-section-header">
-                        <span class="form-section-icon">🏠</span>
-                        <h3>Ambientes</h3>
-                    </div>
-                    <div id="environments-list">
-                        <!-- Populated by JS -->
-                    </div>
-                    <button class="add-env-btn" onclick="addEnvironment()">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                        Adicionar Ambiente
-                    </button>
-                </div>
-
-                <!-- Financeiro -->
-                <div class="form-section">
-                    <div class="form-section-header">
-                        <span class="form-section-icon">💰</span>
-                        <h3>Financeiro</h3>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Valor Vendido (VBPV)</label>
-                            <input type="text" id="f-vbpv" placeholder="R$ 0,00" oninput="calcGap()">
-                        </div>
-                        <div class="form-group">
-                            <label>Valor Finalizado (VBPF)</label>
-                            <input type="text" id="f-vbpf" placeholder="R$ 0,00" oninput="calcGap()">
-                        </div>
-                    </div>
-                    <div class="gap-display" id="gap-display">
-                        <span class="gap-label">GAP Operacional</span>
-                        <span class="gap-value" id="gap-value">R$ 0,00</span>
-                    </div>
-                </div>
-
-                <!-- Checklist Técnico -->
-                <div class="form-section">
-                    <div class="form-section-header">
-                        <span class="form-section-icon">✅</span>
-                        <h3>Checklist Técnico</h3>
-                    </div>
-                    <div class="checklist-form">
-                        <label class="check-row">
-                            <input type="checkbox" id="chk-esquadro">
-                            <span class="chk-mark"></span>
-                            <div>
-                                <strong>Fora de Esquadro</strong>
-                                <small>Cantos das paredes em 90°</small>
-                            </div>
-                        </label>
-                        <label class="check-row">
-                            <input type="checkbox" id="chk-prumada">
-                            <span class="chk-mark"></span>
-                            <div>
-                                <strong>Prumada de Cano</strong>
-                                <small>Canos fora da parede / colunas</small>
-                            </div>
-                        </label>
-                        <label class="check-row">
-                            <input type="checkbox" id="chk-eletros">
-                            <span class="chk-mark"></span>
-                            <div>
-                                <strong>Medidas dos Eletros</strong>
-                                <small>Geladeira, Fogão, Micro (L×A×P)</small>
-                            </div>
-                        </label>
-                        <label class="check-row">
-                            <input type="checkbox" id="chk-fixacao">
-                            <span class="chk-mark"></span>
-                            <div>
-                                <strong>Pontos de Fixação</strong>
-                                <small>Drywall ou Alvenaria</small>
-                            </div>
-                        </label>
-                        <label class="check-row">
-                            <input type="checkbox" id="chk-agua">
-                            <span class="chk-mark"></span>
-                            <div>
-                                <strong>Ponto de Água</strong>
-                                <small>Localização do sifão / esgoto</small>
-                            </div>
-                        </label>
-                        <label class="check-row">
-                            <input type="checkbox" id="chk-gas">
-                            <span class="chk-mark"></span>
-                            <div>
-                                <strong>Ponto de Gás</strong>
-                                <small>Alimentação cooktop / fogão</small>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Observações -->
-                <div class="form-section">
-                    <div class="form-section-header">
-                        <span class="form-section-icon">📝</span>
-                        <h3>Observações da Obra</h3>
-                    </div>
-                    <textarea id="f-notes" placeholder="Anotações técnicas, detalhes do local, pendências..."></textarea>
+                <div class="sb-stat-row">
+                    <span class="sb-stat-dot done"></span>
+                    <span>Concluídos</span>
+                    <span class="sb-stat-val" id="sb-done">0</span>
                 </div>
             </div>
-        </div>
+        </aside>
 
-        <!-- ═══ VIEW: PROJECT DETAIL ═══ -->
-        <div class="view" id="view-detail">
-            <div class="view-header">
-                <button class="back-btn" onclick="showView('home')">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        <!-- ── MAIN AREA ── -->
+        <main class="main-area">
+            <!-- Top bar (mobile + desktop) -->
+            <header class="topbar">
+                <button class="topbar-menu" id="topbar-menu" aria-label="Menu">
+                    <i data-lucide="menu"></i>
                 </button>
-                <h2 class="view-title" id="detail-title">Projeto</h2>
-                <div class="detail-actions">
-                    <button class="icon-btn" onclick="editCurrentProject()" title="Editar">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-                    </button>
-                    <button class="icon-btn danger" onclick="deleteCurrentProject()" title="Excluir">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                    </button>
-                </div>
-            </div>
+                <h1 class="topbar-title" id="topbar-title">Dashboard</h1>
+                <button class="topbar-action" onclick="openNewProject()" aria-label="Novo">
+                    <i data-lucide="plus"></i>
+                </button>
+            </header>
 
-            <div class="detail-scroll" id="detail-content">
-                <!-- Populated by JS -->
-            </div>
-        </div>
+            <!-- ════ PAGE: DASHBOARD ════ -->
+            <section class="page active" id="page-dashboard">
+                <div class="page-scroll">
+                    <!-- Stats Cards Row (desktop bento grid) -->
+                    <div class="bento-grid">
+                        <div class="bento-card accent-card" style="grid-column: span 2;">
+                            <div class="bc-top">
+                                <div class="bc-icon-wrap accent"><i data-lucide="ruler"></i></div>
+                                <span class="bc-chip">Projetos</span>
+                            </div>
+                            <div class="bc-body">
+                                <p class="bc-value" id="dash-total">0</p>
+                                <p class="bc-label">Total de projetos cadastrados</p>
+                            </div>
+                        </div>
+                        <div class="bento-card">
+                            <div class="bc-top">
+                                <div class="bc-icon-wrap warn"><i data-lucide="clock"></i></div>
+                            </div>
+                            <div class="bc-body">
+                                <p class="bc-value" id="dash-pending">0</p>
+                                <p class="bc-label">Pendentes</p>
+                            </div>
+                        </div>
+                        <div class="bento-card">
+                            <div class="bc-top">
+                                <div class="bc-icon-wrap success"><i data-lucide="check-circle"></i></div>
+                            </div>
+                            <div class="bc-body">
+                                <p class="bc-value" id="dash-done">0</p>
+                                <p class="bc-label">Concluídos</p>
+                            </div>
+                        </div>
+                    </div>
 
-        <!-- ═══ VIEW: REFERÊNCIA TÉCNICA ═══ -->
-        <div class="view" id="view-ref">
-            <div class="view-header compact">
-                <h2 class="view-title">Referência Técnica</h2>
-            </div>
+                    <!-- Filters -->
+                    <div class="filter-row">
+                        <h2 class="section-title">Projetos</h2>
+                        <div class="filters">
+                            <button class="chip active" onclick="filterProjects('all',this)">Todos</button>
+                            <button class="chip" onclick="filterProjects('pending',this)">Pendentes</button>
+                            <button class="chip" onclick="filterProjects('done',this)">Concluídos</button>
+                        </div>
+                    </div>
 
-            <div class="ref-scroll">
-                <!-- Dicionário de Símbolos -->
-                <div class="ref-section">
-                    <h3 class="ref-heading">Dicionário de Símbolos</h3>
-                    <div class="ref-grid">
-                        <div class="ref-card">
-                            <span class="ref-symbol blue">PD</span>
-                            <div><strong>Pé Direito</strong><small>Piso ao teto (laje/gesso)</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol blue">P</span>
-                            <div><strong>Peitoril</strong><small>Piso até início da janela</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol red">S</span>
-                            <div><strong>Sifão / Esgoto</strong><small>Saída de água (centro do cano)</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol orange">G</span>
-                            <div><strong>Gás</strong><small>Alimentação cooktop/fogão</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol slate">ROD</span>
-                            <div><strong>Rodapé</strong><small>Altura × profundidade (ex: 10×1.5)</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol slate">MOLD</span>
-                            <div><strong>Moldura</strong><small>Acabamento de gesso no teto</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol green">AF</span>
-                            <div><strong>Água Fria</strong><small>Entrada de água fria</small></div>
-                        </div>
-                        <div class="ref-card">
-                            <span class="ref-symbol red">AQ</span>
-                            <div><strong>Água Quente</strong><small>Entrada de água quente</small></div>
-                        </div>
+                    <!-- Project List / Grid -->
+                    <div class="project-grid" id="project-grid"></div>
+
+                    <!-- Empty -->
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon"><i data-lucide="ruler"></i></div>
+                        <h3>Nenhum projeto ainda</h3>
+                        <p>Clique em <strong>"Novo Projeto"</strong> para iniciar seu primeiro levantamento técnico.</p>
+                        <button class="btn-primary" onclick="openNewProject()"><i data-lucide="plus"></i> Criar Projeto</button>
                     </div>
                 </div>
+            </section>
 
-                <!-- Mapeamento de Pontos -->
-                <div class="ref-section">
-                    <h3 class="ref-heading">Mapeamento de Pontos</h3>
-                    <div class="ref-tip">
-                        <span>💡</span>
-                        <p>Nunca anote um ponto solto. <strong>Use coordenadas X (lateral) e Y (altura).</strong></p>
+            <!-- ════ PAGE: NEW/EDIT PROJECT ════ -->
+            <section class="page" id="page-form">
+                <div class="page-scroll">
+                    <div class="page-header">
+                        <button class="btn-back" onclick="navTo('dashboard',document.getElementById('snav-dash'))"><i data-lucide="arrow-left"></i> Voltar</button>
+                        <h2 class="page-heading" id="form-title">Novo Projeto</h2>
+                        <button class="btn-primary" onclick="saveProject()"><i data-lucide="save"></i> Salvar</button>
                     </div>
-                    <div class="ref-axis-group">
-                        <div class="ref-axis blue-bg">
-                            <span class="axis-tag">EIXO X</span>
-                            <strong>Distância Lateral</strong>
-                            <p>Do <b>canto de referência</b> (esq/dir) até o centro do ponto.</p>
-                        </div>
-                        <div class="ref-axis green-bg">
-                            <span class="axis-tag">EIXO Y</span>
-                            <strong>Altura (H)</strong>
-                            <p>Do <b>piso acabado</b> até o centro do ponto.</p>
-                        </div>
-                    </div>
-                    <div class="ref-diagram">
-                        <svg width="100%" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="20" y="10" width="260" height="155" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
-                            <text x="150" y="28" fill="#475569" font-size="10" text-anchor="middle" font-weight="600">PAREDE</text>
-                            <line x1="20" y1="50" x2="280" y2="50" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4"/>
-                            <line x1="20" y1="90" x2="280" y2="90" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4"/>
-                            <line x1="20" y1="130" x2="280" y2="130" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4"/>
-                            <circle cx="160" cy="90" r="8" fill="#3b82f6" opacity="0.2"/>
-                            <circle cx="160" cy="90" r="4" fill="#3b82f6">
-                                <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
-                            </circle>
-                            <text x="160" y="80" fill="#60a5fa" font-size="8" text-anchor="middle" font-weight="700">PONTO</text>
-                            <line x1="20" y1="158" x2="160" y2="158" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 3"/>
-                            <line x1="20" y1="153" x2="20" y2="163" stroke="#3b82f6" stroke-width="2"/>
-                            <line x1="160" y1="153" x2="160" y2="163" stroke="#3b82f6" stroke-width="2"/>
-                            <rect x="65" y="151" width="50" height="14" rx="3" fill="#3b82f6"/>
-                            <text x="90" y="162" fill="white" font-size="9" text-anchor="middle" font-weight="700">X (cm)</text>
-                            <line x1="275" y1="165" x2="275" y2="90" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
-                            <line x1="270" y1="165" x2="280" y2="165" stroke="#10b981" stroke-width="2"/>
-                            <line x1="270" y1="90" x2="280" y2="90" stroke="#10b981" stroke-width="2"/>
-                            <rect x="268" y="120" width="14" height="22" rx="3" fill="#10b981"/>
-                            <text x="275" y="135" fill="white" font-size="9" text-anchor="middle" font-weight="700" transform="rotate(-90 275 135)">Y (cm)</text>
-                            <text x="150" y="175" fill="#475569" font-size="8" text-anchor="middle">━━ PISO ACABADO ━━</text>
-                        </svg>
-                    </div>
-                </div>
 
-                <!-- Especificações Técnicas -->
-                <div class="ref-section">
-                    <h3 class="ref-heading">Especificações do Levantamento</h3>
-                    <div class="spec-grid">
-                        <div class="spec-item">
-                            <span class="spec-label">Pé Direito</span>
-                            <span class="spec-example">PD 2573 = 257,3cm</span>
+                    <div class="form-layout">
+                        <!-- Col 1: Client + Environments -->
+                        <div class="form-col">
+                            <div class="card">
+                                <div class="card-head"><i data-lucide="user" class="card-icon"></i><h3>Dados do Cliente</h3></div>
+                                <div class="field"><label>Nome do Cliente</label><input type="text" id="f-client" placeholder="Ex: Maria da Silva"></div>
+                                <div class="field-2col">
+                                    <div class="field"><label>Contrato / Pedido</label><input type="text" id="f-contract" placeholder="21914-00127"></div>
+                                    <div class="field"><label>Loja</label><input type="text" id="f-store" placeholder="Penha"></div>
+                                </div>
+                                <div class="field-2col">
+                                    <div class="field"><label>Vendedor</label><input type="text" id="f-seller" placeholder="Nome"></div>
+                                    <div class="field"><label>Finalizador</label><input type="text" id="f-finalizer" value="HENRIQUE SANTOS"></div>
+                                </div>
+                                <div class="field"><label>Endereço</label><input type="text" id="f-address" placeholder="Rua, número, apto..."></div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-head"><i data-lucide="layout-grid" class="card-icon"></i><h3>Ambientes</h3></div>
+                                <div id="env-list"></div>
+                                <button class="btn-dashed" onclick="addEnvironment()"><i data-lucide="plus"></i> Adicionar Ambiente</button>
+                            </div>
                         </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Corpo Armários</span>
-                            <span class="spec-example">Profundidade padrão</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Portas / Frentes</span>
-                            <span class="spec-example">Tipo e acabamento</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Dobradiças</span>
-                            <span class="spec-example">Tipo e quantidade</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Corrediças</span>
-                            <span class="spec-example">Tipo e tamanho</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Puxadores</span>
-                            <span class="spec-example">Modelo e medida</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Bancada</span>
-                            <span class="spec-example">L × P (mm)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="spec-label">Painéis / Vistas</span>
-                            <span class="spec-example">Laterais e fundos</span>
+
+                        <!-- Col 2: Financial + Checklist + Notes -->
+                        <div class="form-col">
+                            <div class="card">
+                                <div class="card-head"><i data-lucide="trending-up" class="card-icon"></i><h3>Financeiro</h3></div>
+                                <div class="field-2col">
+                                    <div class="field"><label>Vendido (VBPV)</label><input type="text" id="f-vbpv" placeholder="R$ 0,00" oninput="calcGap()"></div>
+                                    <div class="field"><label>Finalizado (VBPF)</label><input type="text" id="f-vbpf" placeholder="R$ 0,00" oninput="calcGap()"></div>
+                                </div>
+                                <div class="gap-bar">
+                                    <span class="gap-lbl">GAP Operacional</span>
+                                    <span class="gap-val" id="gap-value">R$ 0,00</span>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-head"><i data-lucide="check-square" class="card-icon"></i><h3>Checklist Técnico</h3></div>
+                                <div class="checks">
+                                    <label class="chk"><input type="checkbox" id="chk-esquadro"><span class="cm"></span><div><strong>Fora de Esquadro</strong><small>Cantos das paredes em 90°</small></div></label>
+                                    <label class="chk"><input type="checkbox" id="chk-prumada"><span class="cm"></span><div><strong>Prumada de Cano</strong><small>Canos fora da parede / colunas</small></div></label>
+                                    <label class="chk"><input type="checkbox" id="chk-eletros"><span class="cm"></span><div><strong>Medidas dos Eletros</strong><small>Geladeira, Fogão, Micro (L×A×P)</small></div></label>
+                                    <label class="chk"><input type="checkbox" id="chk-fixacao"><span class="cm"></span><div><strong>Pontos de Fixação</strong><small>Drywall ou Alvenaria</small></div></label>
+                                    <label class="chk"><input type="checkbox" id="chk-agua"><span class="cm"></span><div><strong>Ponto de Água</strong><small>Posição e registro</small></div></label>
+                                    <label class="chk"><input type="checkbox" id="chk-gas"><span class="cm"></span><div><strong>Ponto de Gás</strong><small>Posição e tipo de conexão</small></div></label>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-head"><i data-lucide="file-text" class="card-icon"></i><h3>Observações</h3></div>
+                                <textarea id="f-notes" placeholder="Anotações sobre a obra, pendências, contatos..."></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Estrutura de Pasta -->
-                <div class="ref-section">
-                    <h3 class="ref-heading">Estrutura de Pasta (Padrão)</h3>
-                    <div class="folder-tree">
-                        <div class="tree-item root">📁 CONTRATO - NOME DO CLIENTE</div>
-                        <div class="tree-item l1">📁 INICIAL <span class="tree-tag">Projeto do vendedor</span></div>
-                        <div class="tree-item l1">📁 MEDIÇÃO <span class="tree-tag">Fotos + PDFs da obra</span></div>
-                        <div class="tree-item l1">📁 FINAL <span class="tree-tag">Arquivo .promob finalizado</span></div>
-                        <div class="tree-item l1">📁 PDF's EXECUTIVO <span class="tree-tag">PDFs de apresentação</span></div>
-                        <div class="tree-item l1">📄 INFO - CLIENTE.txt <span class="tree-tag">Dados cadastrais</span></div>
-                        <div class="tree-item l1">📄 LEVANTAMENTO.txt <span class="tree-tag">Dados técnicos</span></div>
-                        <div class="tree-item l1">📄 FINANCEIRO.txt <span class="tree-tag">VBPV / VBPF / GAP</span></div>
+            <!-- ════ PAGE: PROJECT DETAIL ════ -->
+            <section class="page" id="page-detail">
+                <div class="page-scroll">
+                    <div class="page-header">
+                        <button class="btn-back" onclick="navTo('dashboard',document.getElementById('snav-dash'))"><i data-lucide="arrow-left"></i> Voltar</button>
+                        <h2 class="page-heading" id="detail-title">Projeto</h2>
+                        <div class="page-actions">
+                            <button class="btn-icon" onclick="editCurrentProject()" title="Editar"><i data-lucide="pencil"></i></button>
+                            <button class="btn-icon danger" onclick="deleteCurrentProject()" title="Excluir"><i data-lucide="trash-2"></i></button>
+                        </div>
+                    </div>
+                    <div id="detail-content" class="detail-layout"></div>
+                </div>
+            </section>
+
+            <!-- ════ PAGE: REFERENCE ════ -->
+            <section class="page" id="page-ref">
+                <div class="page-scroll">
+                    <div class="page-header">
+                        <h2 class="page-heading">Referência Técnica</h2>
+                    </div>
+
+                    <div class="ref-layout">
+                        <!-- Symbols -->
+                        <div class="card">
+                            <div class="card-head"><i data-lucide="book-open" class="card-icon"></i><h3>Dicionário de Símbolos</h3></div>
+                            <div class="symbol-grid">
+                                <div class="sym"><span class="sym-tag blue">PD</span><div><strong>Pé Direito</strong><small>Altura piso→teto</small></div></div>
+                                <div class="sym"><span class="sym-tag blue">P</span><div><strong>Peitoril</strong><small>Piso→base janela</small></div></div>
+                                <div class="sym"><span class="sym-tag red">S</span><div><strong>Soleira</strong><small>Altura piso elevado</small></div></div>
+                                <div class="sym"><span class="sym-tag orange">G</span><div><strong>Gesso / Sanca</strong><small>Teto→gesso</small></div></div>
+                                <div class="sym"><span class="sym-tag slate">ROD</span><div><strong>Rodapé</strong><small>Altura × Largura</small></div></div>
+                                <div class="sym"><span class="sym-tag slate">MOLD</span><div><strong>Moldura</strong><small>Porta / janela</small></div></div>
+                                <div class="sym"><span class="sym-tag green">AF</span><div><strong>Água Fria</strong><small>Ponto de água fria</small></div></div>
+                                <div class="sym"><span class="sym-tag red">AQ</span><div><strong>Água Quente</strong><small>Ponto de água quente</small></div></div>
+                                <div class="sym"><span class="sym-tag orange">⊗</span><div><strong>Ponto Elétrico</strong><small>Tomada / Interruptor</small></div></div>
+                                <div class="sym"><span class="sym-tag blue">⊕</span><div><strong>Ponto de Água</strong><small>Registro / Saída</small></div></div>
+                                <div class="sym"><span class="sym-tag slate">---</span><div><strong>Cortineiro</strong><small>Rebaixo p/ cortina</small></div></div>
+                                <div class="sym"><span class="sym-tag slate">-·-</span><div><strong>Sanca</strong><small>Forro rebaixado</small></div></div>
+                                <div class="sym"><span class="sym-tag green">⊠</span><div><strong>Cano / Shaft</strong><small>Coluna hidráulica</small></div></div>
+                                <div class="sym"><span class="sym-tag red">Γ</span><div><strong>Cano Aparente</strong><small>Tubulação exposta</small></div></div>
+                                <div class="sym"><span class="sym-tag orange">①②③</span><div><strong>Faixa Decorativa</strong><small>Revestimento especial</small></div></div>
+                                <div class="sym"><span class="sym-tag blue">L/H/P</span><div><strong>Dimensão Eletro</strong><small>Largura×Altura×Profund.</small></div></div>
+                            </div>
+                        </div>
+
+                        <!-- Mapping Guide -->
+                        <div class="card">
+                            <div class="card-head"><i data-lucide="compass" class="card-icon"></i><h3>Guia de Mapeamento</h3></div>
+                            <div class="tip-card">
+                                <i data-lucide="info"></i>
+                                <p>Use coordenadas X/Y para localizar pontos com precisão no croqui. Todas as medidas em centímetros.</p>
+                            </div>
+                            <div class="axis-cards">
+                                <div class="ax blue-ax"><span class="ax-tag">Eixo X</span><strong>Horizontal — Esquerda → Direita</strong><p>Meça a partir do canto esquerdo da parede.</p></div>
+                                <div class="ax green-ax"><span class="ax-tag">Eixo Y</span><strong>Vertical — Piso → Teto</strong><p>Meça a partir do piso acabado até o ponto.</p></div>
+                            </div>
+                        </div>
+
+                        <!-- Format Guide -->
+                        <div class="card">
+                            <div class="card-head"><i data-lucide="clipboard-list" class="card-icon"></i><h3>Formato do Croqui</h3></div>
+                            <div class="format-example">
+                                <div class="format-header">
+                                    <span class="format-tag">CABEÇALHO</span>
+                                    <code>NOME DO CLIENTE — "AMBIENTE" — DD/MM/AA</code>
+                                </div>
+                                <div class="format-body">
+                                    <div class="format-item"><span class="format-tag blue">INFO GERAL</span><code>.PD 253  Tabica<br>.Rpé 5 × 1,5<br>.(—·—) Sanca H236 (×25)</code></div>
+                                    <div class="format-item"><span class="format-tag orange">ITENS</span><code>.(⊠) Cano — Post 89<br>  L60 / H195 / 246 / P2<br>.(---) Cortineiro<br>  H0 / 223 / P11</code></div>
+                                    <div class="format-item"><span class="format-tag green">ELETROS</span><code>.Geladeira: L63/H177/P66<br>.Fogão: L50/H190/P59<br>.Lavadora: L60/H85/P60</code></div>
+                                    <div class="format-item"><span class="format-tag red">HIDRÁULICA</span><code>.Pia 122: L46/P35 — 39<br>  Reic 90/94/102<br>  Cuba H67 / Sif H? P?<br>  (Γ) P59</code></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Folder Structure -->
+                        <div class="card">
+                            <div class="card-head"><i data-lucide="folder-tree" class="card-icon"></i><h3>Estrutura de Pastas</h3></div>
+                            <div class="tree">
+                                <div class="tree-item root"><i data-lucide="folder"></i>CONTRATO - NOME DO CLIENTE</div>
+                                <div class="tree-item"><i data-lucide="folder"></i>INICIAL <span class="tree-tag">fotos da vistoria</span></div>
+                                <div class="tree-item"><i data-lucide="folder"></i>MEDIÇÃO <span class="tree-tag">croquis + fotos</span></div>
+                                <div class="tree-item"><i data-lucide="folder"></i>FINAL <span class="tree-tag">fotos pós-montagem</span></div>
+                                <div class="tree-item"><i data-lucide="folder"></i>PDF's EXECUTIVO <span class="tree-tag">plantas técnicas</span></div>
+                                <div class="tree-item"><i data-lucide="file-text"></i>INFO-CLIENTE.txt</div>
+                                <div class="tree-item"><i data-lucide="file-text"></i>LEVANTAMENTO.txt</div>
+                                <div class="tree-item"><i data-lucide="file-text"></i>FINANCEIRO.txt</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <!-- ═══ BOTTOM NAV ═══ -->
+        <!-- ── BOTTOM NAV (mobile only) ── -->
         <nav class="bottom-nav" id="bottom-nav">
-            <button class="nav-item active" onclick="showView('home', this)" id="nav-home">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                <span>Projetos</span>
-            </button>
-            <button class="nav-item" onclick="openNewProject(); showNavActive(this);" id="nav-new">
-                <div class="nav-fab">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-                </div>
-                <span>Novo</span>
-            </button>
-            <button class="nav-item" onclick="showView('ref', this)" id="nav-ref">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
-                <span>Ref. Técnica</span>
-            </button>
+            <button class="bnav active" id="bnav-dash" onclick="navTo('dashboard',this,true)"><i data-lucide="home"></i><span>Projetos</span></button>
+            <button class="bnav fab" onclick="openNewProject()"><div class="bnav-fab"><i data-lucide="plus"></i></div><span>Novo</span></button>
+            <button class="bnav" id="bnav-ref" onclick="navTo('ref',this,true)"><i data-lucide="book-open"></i><span>Ref. Técnica</span></button>
         </nav>
-
     </div>
 
     <script src="app.js"></script>
+    <script>document.addEventListener('DOMContentLoaded',()=>{lucide.createIcons()});</script>
 </body>
 </html>
