@@ -2,278 +2,436 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Bolso: Vendedor Técnico</title>
-    <meta name="description" content="Guia técnico de bolso para vendedores de móveis planejados. Símbolos, mapeamento de pontos e checklist de viabilidade.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Medidor Pocket · Finalização Técnica</title>
+    <meta name="description" content="Ferramenta de medição técnica de bolso para finalização de móveis planejados. Controle de projetos, ambientes e pontos hidráulicos/elétricos.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="header" id="top">
-        <div class="header-inner">
-            <div class="header-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-            </div>
-            <div>
-                <h1 class="header-title">Guia Técnico</h1>
-                <p class="header-subtitle">Móveis Planejados · Medidor Pocket v1.0</p>
-            </div>
-        </div>
-    </header>
-
-    <main class="main-content">
-
-        <!-- Hero Card -->
-        <section class="hero-card animate-in">
-            <div class="hero-badge">📐 Referência Rápida</div>
-            <h2 class="hero-title">Vendedor Técnico</h2>
-            <p class="hero-desc">Tudo que você precisa na palma da mão para realizar medições precisas e profissionais.</p>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-value">6</span>
-                    <span class="hero-stat-label">Símbolos</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-value">2</span>
-                    <span class="hero-stat-label">Eixos</span>
-                </div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat">
-                    <span class="hero-stat-value">4</span>
-                    <span class="hero-stat-label">Checks</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção 1: Glossário de Símbolos -->
-        <section id="glossario" class="section animate-in">
-            <div class="section-header">
-                <span class="section-pill blue">Referência</span>
-                <h2 class="section-title">Dicionário de Símbolos</h2>
-            </div>
-            <div class="symbols-grid">
-                <div class="symbol-card" style="--delay: 0.05s">
-                    <div class="symbol-icon blue">PD</div>
-                    <div class="symbol-info">
-                        <span class="symbol-name">Pé Direito</span>
-                        <span class="symbol-desc">Altura do piso ao teto (laje/gesso).</span>
-                    </div>
-                </div>
-                <div class="symbol-card" style="--delay: 0.1s">
-                    <div class="symbol-icon blue">P</div>
-                    <div class="symbol-info">
-                        <span class="symbol-name">Peitoril</span>
-                        <span class="symbol-desc">Altura do piso até o início da janela.</span>
-                    </div>
-                </div>
-                <div class="symbol-card" style="--delay: 0.15s">
-                    <div class="symbol-icon red">S</div>
-                    <div class="symbol-info">
-                        <span class="symbol-name">Sifão / Esgoto</span>
-                        <span class="symbol-desc">Ponto de saída de água (centro do cano).</span>
-                    </div>
-                </div>
-                <div class="symbol-card" style="--delay: 0.2s">
-                    <div class="symbol-icon orange">G</div>
-                    <div class="symbol-info">
-                        <span class="symbol-name">Gás</span>
-                        <span class="symbol-desc">Ponto de alimentação para cooktop/fogão.</span>
-                    </div>
-                </div>
-                <div class="symbol-card" style="--delay: 0.25s">
-                    <div class="symbol-icon slate">ROD</div>
-                    <div class="symbol-info">
-                        <span class="symbol-name">Rodapé</span>
-                        <span class="symbol-desc">Indicar altura × profundidade (ex: 10×1.5).</span>
-                    </div>
-                </div>
-                <div class="symbol-card" style="--delay: 0.3s">
-                    <div class="symbol-icon slate">MOLD</div>
-                    <div class="symbol-info">
-                        <span class="symbol-name">Moldura</span>
-                        <span class="symbol-desc">Acabamento de gesso no teto.</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção 2: O Ponto Exato -->
-        <section id="mapeamento" class="section animate-in">
-            <div class="section-header">
-                <span class="section-pill green">Técnica</span>
-                <h2 class="section-title">O Ponto Exato</h2>
-            </div>
-            <div class="tip-banner">
-                <span class="tip-icon">💡</span>
-                <p>Nunca anote um ponto solto no desenho. <strong>Use coordenadas!</strong></p>
-            </div>
-
-            <div class="axis-cards">
-                <div class="axis-card blue-axis">
-                    <div class="axis-badge">Eixo X</div>
-                    <h3 class="axis-title">Distância Lateral</h3>
-                    <p class="axis-desc">Sempre meça de um <strong>Canto de Referência</strong> (Esquerda ou Direita) até o centro do ponto.</p>
-                </div>
-                <div class="axis-card green-axis">
-                    <div class="axis-badge">Eixo Y</div>
-                    <h3 class="axis-title">Altura (H)</h3>
-                    <p class="axis-desc">Meça do <strong>Piso Acabado</strong> até o centro do ponto.</p>
-                </div>
-            </div>
-
-            <!-- Diagrama SVG Interativo -->
-            <div class="diagram-container">
-                <svg width="100%" height="200" viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Parede -->
-                    <rect x="20" y="15" width="260" height="170" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
-                    <text x="150" y="32" fill="#94a3b8" font-size="11" text-anchor="middle" font-weight="500">PAREDE</text>
-                    
-                    <!-- Grid de fundo -->
-                    <line x1="20" y1="55" x2="280" y2="55" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4"/>
-                    <line x1="20" y1="95" x2="280" y2="95" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4"/>
-                    <line x1="20" y1="135" x2="280" y2="135" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4"/>
-                    
-                    <!-- Ponto -->
-                    <circle cx="170" cy="100" r="10" fill="#3b82f6" opacity="0.15"/>
-                    <circle cx="170" cy="100" r="5" fill="#3b82f6">
-                        <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
-                        <animate attributeName="opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
-                    </circle>
-                    <text x="170" y="90" fill="#1e40af" font-size="9" text-anchor="middle" font-weight="700">PONTO</text>
-                    
-                    <!-- Cota X -->
-                    <line x1="20" y1="175" x2="170" y2="175" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6 3"/>
-                    <line x1="20" y1="170" x2="20" y2="180" stroke="#3b82f6" stroke-width="2"/>
-                    <line x1="170" y1="170" x2="170" y2="180" stroke="#3b82f6" stroke-width="2"/>
-                    <rect x="70" y="167" width="50" height="16" rx="3" fill="#3b82f6"/>
-                    <text x="95" y="179" fill="white" font-size="10" text-anchor="middle" font-weight="700">X (L)</text>
-                    
-                    <!-- Cota Y -->
-                    <line x1="275" y1="185" x2="275" y2="100" stroke="#10b981" stroke-width="2" stroke-dasharray="6 3"/>
-                    <line x1="270" y1="185" x2="280" y2="185" stroke="#10b981" stroke-width="2"/>
-                    <line x1="270" y1="100" x2="280" y2="100" stroke="#10b981" stroke-width="2"/>
-                    <rect x="267" y="133" width="16" height="22" rx="3" fill="#10b981"/>
-                    <text x="275" y="148" fill="white" font-size="10" text-anchor="middle" font-weight="700" transform="rotate(-90 275 148)">Y (H)</text>
-                    
-                    <!-- Label Piso -->
-                    <text x="150" y="195" fill="#94a3b8" font-size="9" text-anchor="middle">━━━ PISO ACABADO ━━━</text>
+    <!-- ═══ SPLASH / LOADING ═══ -->
+    <div class="splash" id="splash">
+        <div class="splash-content">
+            <div class="splash-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                    <line x1="12" y1="22.08" x2="12" y2="12"/>
                 </svg>
             </div>
-            <p class="diagram-caption">Exemplo: Tomada a <strong>120cm</strong> do canto (X) e <strong>110cm</strong> de altura (Y).</p>
-        </section>
+            <h1 class="splash-title">MEDIDOR POCKET</h1>
+            <p class="splash-sub">Finalização Técnica</p>
+            <div class="splash-bar"><div class="splash-bar-fill"></div></div>
+        </div>
+    </div>
 
-        <!-- Seção 3: Checklist de Viabilidade -->
-        <section id="viabilidade" class="section animate-in">
-            <div class="section-header">
-                <span class="section-pill amber">Checklist</span>
-                <h2 class="section-title">Verificação Técnica</h2>
-            </div>
-            <div class="checklist">
-                <label class="check-item" id="check-1">
-                    <div class="check-box">
-                        <input type="checkbox" onchange="toggleCheck(this)">
-                        <span class="checkmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </span>
-                    </div>
-                    <div class="check-content">
-                        <span class="check-title">Fora de Esquadro?</span>
-                        <span class="check-desc">Verificar se os cantos das paredes estão em 90°.</span>
-                    </div>
-                    <span class="check-priority high">Alta</span>
-                </label>
-                <label class="check-item" id="check-2">
-                    <div class="check-box">
-                        <input type="checkbox" onchange="toggleCheck(this)">
-                        <span class="checkmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </span>
-                    </div>
-                    <div class="check-content">
-                        <span class="check-title">Prumada de Cano?</span>
-                        <span class="check-desc">Há canos passando por fora da parede ou em colunas?</span>
-                    </div>
-                    <span class="check-priority medium">Média</span>
-                </label>
-                <label class="check-item" id="check-3">
-                    <div class="check-box">
-                        <input type="checkbox" onchange="toggleCheck(this)">
-                        <span class="checkmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </span>
-                    </div>
-                    <div class="check-content">
-                        <span class="check-title">Medidas dos Eletros</span>
-                        <span class="check-desc">Geladeira, Fogão e Microondas estão medidos? (L×A×P)</span>
-                    </div>
-                    <span class="check-priority high">Alta</span>
-                </label>
-                <label class="check-item" id="check-4">
-                    <div class="check-box">
-                        <input type="checkbox" onchange="toggleCheck(this)">
-                        <span class="checkmark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                        </span>
-                    </div>
-                    <div class="check-content">
-                        <span class="check-title">Pontos de Fixação</span>
-                        <span class="check-desc">A parede é de Drywall ou Alvenaria?</span>
-                    </div>
-                    <span class="check-priority medium">Média</span>
-                </label>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-label">
-                    <span>Progresso</span>
-                    <span id="progress-text">0 de 4</span>
+    <!-- ═══ APP SHELL ═══ -->
+    <div class="app" id="app">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <div class="header-logo">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                        <line x1="12" y1="22.08" x2="12" y2="12"/>
+                    </svg>
                 </div>
-                <div class="progress-track">
-                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                <div>
+                    <h1 class="header-title">Medidor Pocket</h1>
                 </div>
             </div>
-        </section>
-
-        <!-- Seção 4: Notas Rápidas -->
-        <section id="notas" class="section animate-in">
-            <div class="section-header">
-                <span class="section-pill dark">Anotações</span>
-                <h2 class="section-title">Notas Rápidas</h2>
+            <div class="header-right">
+                <button class="header-btn" onclick="openNewProject()" title="Novo Projeto" id="btn-new-project">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </button>
             </div>
-            <div class="notes-container">
-                <textarea id="notes-input" placeholder="Anote algo importante da obra aqui..." oninput="saveNotes()"></textarea>
-                <div class="notes-footer">
-                    <span class="notes-hint">💾 Salvo automaticamente</span>
-                    <button class="notes-clear" onclick="clearNotes()">Limpar</button>
+        </header>
+
+        <!-- ═══ VIEW: HOME (Dashboard) ═══ -->
+        <div class="view active" id="view-home">
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card accent">
+                    <span class="stat-value" id="stat-total">0</span>
+                    <span class="stat-label">Projetos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-pending">0</span>
+                    <span class="stat-label">Pendentes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="stat-done">0</span>
+                    <span class="stat-label">Concluídos</span>
                 </div>
             </div>
-        </section>
 
-    </main>
+            <!-- Filter -->
+            <div class="filter-bar">
+                <button class="filter-chip active" data-filter="all" onclick="filterProjects('all', this)">Todos</button>
+                <button class="filter-chip" data-filter="pending" onclick="filterProjects('pending', this)">Pendentes</button>
+                <button class="filter-chip" data-filter="done" onclick="filterProjects('done', this)">Concluídos</button>
+            </div>
 
-    <!-- Footer Navegação -->
-    <footer class="bottom-nav">
-        <button class="nav-btn active" onclick="navigateTo('top', this)" id="nav-home">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            <span>Home</span>
-        </button>
-        <button class="nav-btn" onclick="navigateTo('glossario', this)" id="nav-simbolos">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
-            <span>Símbolos</span>
-        </button>
-        <button class="nav-btn" onclick="navigateTo('mapeamento', this)" id="nav-mapa">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span>Mapa</span>
-        </button>
-        <button class="nav-btn" onclick="navigateTo('viabilidade', this)" id="nav-check">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            <span>Check</span>
-        </button>
-    </footer>
+            <!-- Project List -->
+            <div class="project-list" id="project-list">
+                <!-- Populated by JS -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state" style="display:none;">
+                <div class="empty-icon">📐</div>
+                <h3>Nenhum projeto cadastrado</h3>
+                <p>Toque no <strong>+</strong> para iniciar seu primeiro levantamento técnico.</p>
+            </div>
+        </div>
+
+        <!-- ═══ VIEW: NEW / EDIT PROJECT ═══ -->
+        <div class="view" id="view-new">
+            <div class="view-header">
+                <button class="back-btn" onclick="showView('home')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <h2 class="view-title" id="form-title">Novo Projeto</h2>
+                <button class="save-btn" onclick="saveProject()" id="btn-save">Salvar</button>
+            </div>
+
+            <div class="form-scroll">
+                <!-- Client Info -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">👤</span>
+                        <h3>Dados do Cliente</h3>
+                    </div>
+                    <div class="form-group">
+                        <label>Nome do Cliente</label>
+                        <input type="text" id="f-client" placeholder="Ex: Maria da Silva" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Contrato / Pedido</label>
+                            <input type="text" id="f-contract" placeholder="Ex: 21914-00127" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>Loja</label>
+                            <input type="text" id="f-store" placeholder="Ex: Penha" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Vendedor</label>
+                            <input type="text" id="f-seller" placeholder="Nome do vendedor" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>Finalizador</label>
+                            <input type="text" id="f-finalizer" placeholder="Seu nome" value="HENRIQUE SANTOS" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Endereço</label>
+                        <input type="text" id="f-address" placeholder="Rua, número, apto..." autocomplete="off">
+                    </div>
+                </div>
+
+                <!-- Ambientes -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">🏠</span>
+                        <h3>Ambientes</h3>
+                    </div>
+                    <div id="environments-list">
+                        <!-- Populated by JS -->
+                    </div>
+                    <button class="add-env-btn" onclick="addEnvironment()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        Adicionar Ambiente
+                    </button>
+                </div>
+
+                <!-- Financeiro -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">💰</span>
+                        <h3>Financeiro</h3>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Valor Vendido (VBPV)</label>
+                            <input type="text" id="f-vbpv" placeholder="R$ 0,00" oninput="calcGap()">
+                        </div>
+                        <div class="form-group">
+                            <label>Valor Finalizado (VBPF)</label>
+                            <input type="text" id="f-vbpf" placeholder="R$ 0,00" oninput="calcGap()">
+                        </div>
+                    </div>
+                    <div class="gap-display" id="gap-display">
+                        <span class="gap-label">GAP Operacional</span>
+                        <span class="gap-value" id="gap-value">R$ 0,00</span>
+                    </div>
+                </div>
+
+                <!-- Checklist Técnico -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">✅</span>
+                        <h3>Checklist Técnico</h3>
+                    </div>
+                    <div class="checklist-form">
+                        <label class="check-row">
+                            <input type="checkbox" id="chk-esquadro">
+                            <span class="chk-mark"></span>
+                            <div>
+                                <strong>Fora de Esquadro</strong>
+                                <small>Cantos das paredes em 90°</small>
+                            </div>
+                        </label>
+                        <label class="check-row">
+                            <input type="checkbox" id="chk-prumada">
+                            <span class="chk-mark"></span>
+                            <div>
+                                <strong>Prumada de Cano</strong>
+                                <small>Canos fora da parede / colunas</small>
+                            </div>
+                        </label>
+                        <label class="check-row">
+                            <input type="checkbox" id="chk-eletros">
+                            <span class="chk-mark"></span>
+                            <div>
+                                <strong>Medidas dos Eletros</strong>
+                                <small>Geladeira, Fogão, Micro (L×A×P)</small>
+                            </div>
+                        </label>
+                        <label class="check-row">
+                            <input type="checkbox" id="chk-fixacao">
+                            <span class="chk-mark"></span>
+                            <div>
+                                <strong>Pontos de Fixação</strong>
+                                <small>Drywall ou Alvenaria</small>
+                            </div>
+                        </label>
+                        <label class="check-row">
+                            <input type="checkbox" id="chk-agua">
+                            <span class="chk-mark"></span>
+                            <div>
+                                <strong>Ponto de Água</strong>
+                                <small>Localização do sifão / esgoto</small>
+                            </div>
+                        </label>
+                        <label class="check-row">
+                            <input type="checkbox" id="chk-gas">
+                            <span class="chk-mark"></span>
+                            <div>
+                                <strong>Ponto de Gás</strong>
+                                <small>Alimentação cooktop / fogão</small>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Observações -->
+                <div class="form-section">
+                    <div class="form-section-header">
+                        <span class="form-section-icon">📝</span>
+                        <h3>Observações da Obra</h3>
+                    </div>
+                    <textarea id="f-notes" placeholder="Anotações técnicas, detalhes do local, pendências..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ VIEW: PROJECT DETAIL ═══ -->
+        <div class="view" id="view-detail">
+            <div class="view-header">
+                <button class="back-btn" onclick="showView('home')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </button>
+                <h2 class="view-title" id="detail-title">Projeto</h2>
+                <div class="detail-actions">
+                    <button class="icon-btn" onclick="editCurrentProject()" title="Editar">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </button>
+                    <button class="icon-btn danger" onclick="deleteCurrentProject()" title="Excluir">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="detail-scroll" id="detail-content">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- ═══ VIEW: REFERÊNCIA TÉCNICA ═══ -->
+        <div class="view" id="view-ref">
+            <div class="view-header compact">
+                <h2 class="view-title">Referência Técnica</h2>
+            </div>
+
+            <div class="ref-scroll">
+                <!-- Dicionário de Símbolos -->
+                <div class="ref-section">
+                    <h3 class="ref-heading">Dicionário de Símbolos</h3>
+                    <div class="ref-grid">
+                        <div class="ref-card">
+                            <span class="ref-symbol blue">PD</span>
+                            <div><strong>Pé Direito</strong><small>Piso ao teto (laje/gesso)</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol blue">P</span>
+                            <div><strong>Peitoril</strong><small>Piso até início da janela</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol red">S</span>
+                            <div><strong>Sifão / Esgoto</strong><small>Saída de água (centro do cano)</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol orange">G</span>
+                            <div><strong>Gás</strong><small>Alimentação cooktop/fogão</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol slate">ROD</span>
+                            <div><strong>Rodapé</strong><small>Altura × profundidade (ex: 10×1.5)</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol slate">MOLD</span>
+                            <div><strong>Moldura</strong><small>Acabamento de gesso no teto</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol green">AF</span>
+                            <div><strong>Água Fria</strong><small>Entrada de água fria</small></div>
+                        </div>
+                        <div class="ref-card">
+                            <span class="ref-symbol red">AQ</span>
+                            <div><strong>Água Quente</strong><small>Entrada de água quente</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mapeamento de Pontos -->
+                <div class="ref-section">
+                    <h3 class="ref-heading">Mapeamento de Pontos</h3>
+                    <div class="ref-tip">
+                        <span>💡</span>
+                        <p>Nunca anote um ponto solto. <strong>Use coordenadas X (lateral) e Y (altura).</strong></p>
+                    </div>
+                    <div class="ref-axis-group">
+                        <div class="ref-axis blue-bg">
+                            <span class="axis-tag">EIXO X</span>
+                            <strong>Distância Lateral</strong>
+                            <p>Do <b>canto de referência</b> (esq/dir) até o centro do ponto.</p>
+                        </div>
+                        <div class="ref-axis green-bg">
+                            <span class="axis-tag">EIXO Y</span>
+                            <strong>Altura (H)</strong>
+                            <p>Do <b>piso acabado</b> até o centro do ponto.</p>
+                        </div>
+                    </div>
+                    <div class="ref-diagram">
+                        <svg width="100%" height="180" viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="20" y="10" width="260" height="155" rx="4" fill="#0f172a" stroke="#334155" stroke-width="1.5"/>
+                            <text x="150" y="28" fill="#475569" font-size="10" text-anchor="middle" font-weight="600">PAREDE</text>
+                            <line x1="20" y1="50" x2="280" y2="50" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4"/>
+                            <line x1="20" y1="90" x2="280" y2="90" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4"/>
+                            <line x1="20" y1="130" x2="280" y2="130" stroke="#1e293b" stroke-width="0.5" stroke-dasharray="4"/>
+                            <circle cx="160" cy="90" r="8" fill="#3b82f6" opacity="0.2"/>
+                            <circle cx="160" cy="90" r="4" fill="#3b82f6">
+                                <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+                            </circle>
+                            <text x="160" y="80" fill="#60a5fa" font-size="8" text-anchor="middle" font-weight="700">PONTO</text>
+                            <line x1="20" y1="158" x2="160" y2="158" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 3"/>
+                            <line x1="20" y1="153" x2="20" y2="163" stroke="#3b82f6" stroke-width="2"/>
+                            <line x1="160" y1="153" x2="160" y2="163" stroke="#3b82f6" stroke-width="2"/>
+                            <rect x="65" y="151" width="50" height="14" rx="3" fill="#3b82f6"/>
+                            <text x="90" y="162" fill="white" font-size="9" text-anchor="middle" font-weight="700">X (cm)</text>
+                            <line x1="275" y1="165" x2="275" y2="90" stroke="#10b981" stroke-width="2" stroke-dasharray="5 3"/>
+                            <line x1="270" y1="165" x2="280" y2="165" stroke="#10b981" stroke-width="2"/>
+                            <line x1="270" y1="90" x2="280" y2="90" stroke="#10b981" stroke-width="2"/>
+                            <rect x="268" y="120" width="14" height="22" rx="3" fill="#10b981"/>
+                            <text x="275" y="135" fill="white" font-size="9" text-anchor="middle" font-weight="700" transform="rotate(-90 275 135)">Y (cm)</text>
+                            <text x="150" y="175" fill="#475569" font-size="8" text-anchor="middle">━━ PISO ACABADO ━━</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Especificações Técnicas -->
+                <div class="ref-section">
+                    <h3 class="ref-heading">Especificações do Levantamento</h3>
+                    <div class="spec-grid">
+                        <div class="spec-item">
+                            <span class="spec-label">Pé Direito</span>
+                            <span class="spec-example">PD 2573 = 257,3cm</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Corpo Armários</span>
+                            <span class="spec-example">Profundidade padrão</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Portas / Frentes</span>
+                            <span class="spec-example">Tipo e acabamento</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Dobradiças</span>
+                            <span class="spec-example">Tipo e quantidade</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Corrediças</span>
+                            <span class="spec-example">Tipo e tamanho</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Puxadores</span>
+                            <span class="spec-example">Modelo e medida</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Bancada</span>
+                            <span class="spec-example">L × P (mm)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Painéis / Vistas</span>
+                            <span class="spec-example">Laterais e fundos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Estrutura de Pasta -->
+                <div class="ref-section">
+                    <h3 class="ref-heading">Estrutura de Pasta (Padrão)</h3>
+                    <div class="folder-tree">
+                        <div class="tree-item root">📁 CONTRATO - NOME DO CLIENTE</div>
+                        <div class="tree-item l1">📁 INICIAL <span class="tree-tag">Projeto do vendedor</span></div>
+                        <div class="tree-item l1">📁 MEDIÇÃO <span class="tree-tag">Fotos + PDFs da obra</span></div>
+                        <div class="tree-item l1">📁 FINAL <span class="tree-tag">Arquivo .promob finalizado</span></div>
+                        <div class="tree-item l1">📁 PDF's EXECUTIVO <span class="tree-tag">PDFs de apresentação</span></div>
+                        <div class="tree-item l1">📄 INFO - CLIENTE.txt <span class="tree-tag">Dados cadastrais</span></div>
+                        <div class="tree-item l1">📄 LEVANTAMENTO.txt <span class="tree-tag">Dados técnicos</span></div>
+                        <div class="tree-item l1">📄 FINANCEIRO.txt <span class="tree-tag">VBPV / VBPF / GAP</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══ BOTTOM NAV ═══ -->
+        <nav class="bottom-nav" id="bottom-nav">
+            <button class="nav-item active" onclick="showView('home', this)" id="nav-home">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Projetos</span>
+            </button>
+            <button class="nav-item" onclick="openNewProject(); showNavActive(this);" id="nav-new">
+                <div class="nav-fab">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                </div>
+                <span>Novo</span>
+            </button>
+            <button class="nav-item" onclick="showView('ref', this)" id="nav-ref">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M8 7h6"/><path d="M8 11h8"/></svg>
+                <span>Ref. Técnica</span>
+            </button>
+        </nav>
+
+    </div>
 
     <script src="app.js"></script>
 </body>
